@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/index.js" defer></script>
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+</head>
+<body>
+
+  <header>
+    
+    <div alt="Open navigation menu" class="open-nav-btn" data-nav-btn="false"></div>
+
+    <img src="images/logo.svg" alt="Company logo" class="logo">
+
+    <nav data-nav-active="">
+
+      <ul class="nav__options">
+
+        <a href="#" class="nav__link">Collections</a>
+        <a href="#" class="nav__link">Men</a>
+        <a href="#" class="nav__link">Women</a>
+        <a href="#" class="nav__link">About</a>
+        <a href="#" class="nav__link">Contact</a>
+      
+      </ul>
+
+    </nav>
+
+    <div class="cart-pfp-container">
+
+      <div>
+        <img src="images/icon-cart.svg" alt="Shopping cart" class="cart-icon" data-cart-active="">
+        <span class="get-cart-icon-pseudoelement" aria-hidden="true">!</span>
+      </div>
+      <img src="images/image-avatar.png" alt="Your profile picture" class="pfp">
+
+    </div>
+  
+  </header>
+
+  <div class="cart" data-cart-list-active="" aria-hidden="true">
+
+    <h3 class="cart__title">
+      Cart
+    </h3>
+
+    <ul class="cart__list">
+      <p class="cart-empty">Your cart is empty</p>
+    </ul>
+
+  </div>
+  
+  <div id="black-background" data-black-background-active=""></div>
+
+  <div class="product-container">
+
+    <section class="carousel-container1">
+
+      <img src="images/icon-close.svg" class="close-carousel-btn" alt="Close zoom">
+
+      <div class="carousel" data-carousel data-carousel-1>
+
+        <button class="carousel-button prev" data-carousel-button="prev">&#8249;</button>
+        <button class="carousel-button next" data-carousel-button="next">&#8250;</button>
+
+        <ul data-slides data-slides-1>
+
+          <li class="slide slide--1" data-active>
+            <img src="images/image-product-1.jpg" alt="Nature Image #1" class="slide__img">
+          </li>
+
+          <li class="slide slide--1">
+            <img src="images/image-product-2.jpg" alt="Nature Image #2" class="slide__img">
+          </li>
+
+          <li class="slide slide--1">
+            <img src="images/image-product-3.jpg" alt="Nature Image #3" class="slide__img">
+          </li>
+
+          <li class="slide slide--1">
+            <img src="images/image-product-4.jpg" alt="Nature Image #3" class="slide__img">
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="carousel-images carousel-images--1" data-carousel-images data-carousel-images-1>
+
+        <img src="images/image-product-1-thumbnail.jpg" alt="" class="carousel-images__img carousel-images__img--1" data-img="1" data-active-img-select>
+        <img src="images/image-product-2-thumbnail.jpg" alt="" class="carousel-images__img carousel-images__img--1" data-img="2">
+        <img src="images/image-product-3-thumbnail.jpg" alt="" class="carousel-images__img carousel-images__img--1" data-img="3">
+        <img src="images/image-product-4-thumbnail.jpg" alt="" class="carousel-images__img carousel-images__img--1" data-img="4">
+        
+      </div>
+
+    </section>
+
+
+    <section class="carousel-container2">
+
+      <div class="carousel" data-carousel data-carousel-2>
+
+        <ul data-slides data-slides-2>
+
+          <li class="slide slide--2" data-active>
+            <img src="images/image-product-1.jpg" alt="Nature Image #1" class="slide__img slide__img--2">
+          </li>
+
+          <li class="slide slide--2">
+            <img src="images/image-product-2.jpg" alt="Nature Image #2" class="slide__img slide__img--2">
+          </li>
+
+          <li class="slide slide--2">
+            <img src="images/image-product-3.jpg" alt="Nature Image #3" class="slide__img slide__img--2">
+          </li>
+
+          <li class="slide slide--2">
+            <img src="images/image-product-4.jpg" alt="Nature Image #3" class="slide__img slide__img--2">
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="carousel-images carousel-images--2">
+        <img src="images/image-product-1-thumbnail.jpg" alt="" class="carousel-images__img carousel-images__img--2" data-img="1" data-active-img-select>
+        <img src="images/image-product-2-thumbnail.jpg" alt="" class="carousel-images__img carousel-images__img--2" data-img="2">
+        <img src="images/image-product-3-thumbnail.jpg" alt="" class="carousel-images__img carousel-images__img--2" data-img="3">
+        <img src="images/image-product-4-thumbnail.jpg" alt="" class="carousel-images__img carousel-images__img--2" data-img="4">
+      </div>
+
+    </section>
+
+    
+    <section class="product-content">
+
+      <p class="company-name">
+        Sneaker Company
+      </p>
+
+      <h1 class="product-name">
+        Fall Limited Edition Sneakers
+      </h1>
+
+      <p class="product-description">
+        These low-profile sneakers are your perfect casual wear companion. Featuring a 
+        durable rubber outer sole, they'll withstand everything the weather can offer.
+      </p>
+
+      <div class="product-price">
+
+        <p class="product-price__end-price">
+          $125.00
+        </p>
+
+        <p class="product-price__base-price">
+          $250.00
+        </p>
+
+      </div>
+
+      <div class="buy-btns">
+
+        <div class="buy-btns__add-or-less">
+
+          <button class="buy-btns__less" data-buy-btns>
+            <img src="images/icon-minus.svg" alt="add more" class="buy-btns__less-img buy-btns">
+          </button>
+
+          <p class="num-of-products">
+            
+          </p>
+
+          <button class="buy-btns__add" data-buy-btns>
+            <img src="images/icon-plus.svg" alt="less" class="buy-btns__add-img buy-btns">
+          </button>
+
+        </div>
+
+        <button class="buy-btns__add-cart">
+          <img src="images/icons8-shopping-cart-30.png" alt="" class="add-cart__img">
+          <div class="add-cart__text">Add to cart</div>
+        </button>
+
+      </div>
+
+    </section>
+  
+  </div> 
+
+  <footer>
+    <p class="footer_p">Challenge by 
+
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="footer__link">
+        Frontend Mentor</a>. 
+        
+        Coded by
+
+      <a href="#" class="footer__link">
+        Rafael Pacheco</a>.
+
+    </p>
+
+  </footer>
+  
+</body>
+</html>
