@@ -2,56 +2,62 @@ const ALLIMGS = document.querySelectorAll('img')
 ALLIMGS.forEach(IMG => {
   IMG.setAttribute('draggable', false)
 });
+//Make all images not draggable
 
 
+//Variables to open nav (on mobiles)
 let buttonOpenNav = document.querySelector('.open-nav-btn')
 let nav = document.querySelector('nav')
-let blackBackgroundAtOpeningNav = document.querySelector('#black-background')
+let blackBackground = document.querySelector('#black-background')
 
-let carouselButtons = document.querySelectorAll('carousel-btn')
-
+//Event listener to open and close nav (on mobiles)
 buttonOpenNav.addEventListener('click', ()=>{
 
     if(buttonOpenNav.dataset.navBtn === "false"){
 
         nav.dataset.navActive = "true"
-        blackBackgroundAtOpeningNav.dataset.blackBackgroundActive = "true"
+        blackBackground.dataset.blackBackgroundActive = "true"
         buttonOpenNav.dataset.navBtn = "true"
 
     }
     else{
 
         nav.dataset.navActive = "false"
-        blackBackgroundAtOpeningNav.dataset.blackBackgroundActive = "false"
+        blackBackground.dataset.blackBackgroundActive = "false"
         buttonOpenNav.dataset.navBtn = "false"
 
     }
 
 })
 
+//carousel-container1 class
 const carouselContainer1 = document.querySelector('.carousel-container1')
 
-blackBackgroundAtOpeningNav.addEventListener('click', ()=>{
+
+//Event listener to close nav or carousel-container1 by clicking #black-background
+blackBackground.addEventListener('click', ()=>{
 
   let screenSize = window.innerWidth
 
   if(screenSize >= 1100){
 
-    blackBackgroundAtOpeningNav.dataset.blackBackgroundActive = "false"
+    blackBackground.dataset.blackBackgroundActive = "false"
     carouselContainer1.style.cssText = "display: none"
   }
   else{
 
     nav.dataset.navActive = "false"
-    blackBackgroundAtOpeningNav.dataset.blackBackgroundActive = "false"
+    blackBackground.dataset.blackBackgroundActive = "false"
     buttonOpenNav.dataset.navBtn = "false"
   }
 
 })
 
 
+//carousel buttons
 const buttons = document.querySelectorAll("[data-carousel-button]")
 
+//event listener to change images when clicking carousel-button on carousel-container1
 buttons.forEach(button => {
 
   button.addEventListener("click", () => {
@@ -82,11 +88,12 @@ buttons.forEach(button => {
   })
 })
 
+//variables for the cart list
 const openCartListButton = document.querySelector('.cart-icon')
 const cartWindow = document.querySelector('.cart')
 const cartNotification = document.querySelector('.get-cart-icon-pseudoelement')
 
-
+//open the .cart
 openCartListButton.addEventListener('click', () => {
 
   if(openCartListButton.dataset.cartActive === "true"){
@@ -107,69 +114,10 @@ openCartListButton.addEventListener('click', () => {
 
 })
 
-const carouselImgButtons2 = document.querySelectorAll('.carousel-images__img--2')
-
-carouselImgButtons2.forEach(imgButton => {
-  
-  imgButton.addEventListener('click', () => {
-
-    const carouselImgButtons2Div = document.querySelector('.carousel-images--2')
-    const activeImgButton2 = carouselImgButtons2Div.querySelector('[data-active-img-select]')
-
-    const slidesUl = document.querySelector('[data-slides-2]')
-    const slides = document.querySelectorAll('.slide--2')
-    const activeSlide = slidesUl.querySelector('[data-active]')
-
-    switch(imgButton.dataset.img){
-
-      case "1": 
-
-      delete activeSlide.dataset.active
-      slides[0].dataset.active = true
-
-      delete activeImgButton2.dataset.activeImgSelect
-      carouselImgButtons2[0].dataset.activeImgSelect = true
-
-      break;
-
-      case "2": 
-      
-      delete activeSlide.dataset.active
-      slides[1].dataset.active = true
-
-      delete activeImgButton2.dataset.activeImgSelect
-      carouselImgButtons2[1].dataset.activeImgSelect = true
-
-      break;
-
-      case "3": 
-
-      delete activeSlide.dataset.active
-      slides[2].dataset.active = true
-
-      delete activeImgButton2.dataset.activeImgSelect
-      carouselImgButtons2[2].dataset.activeImgSelect = true
-
-      break;
-
-      case "4": 
-      
-      delete activeSlide.dataset.active
-      slides[3].dataset.active = true
-
-      delete activeImgButton2.dataset.activeImgSelect
-      carouselImgButtons2[3].dataset.activeImgSelect = true
-
-      break;
-    }
-    
-
-  })
-
-});
-
+//varibale carousel-images--1
 const carouselImgButtons1 = document.querySelectorAll('.carousel-images__img--1')
 
+//event listener to change main image when clicking the .carouse-images__img--1
 carouselImgButtons1.forEach(imgButton => {
   
   imgButton.addEventListener('click', () => {
@@ -224,19 +172,82 @@ carouselImgButtons1.forEach(imgButton => {
       break;
     }
     
-
   })
 
 });
 
+//varibale carousel-images--2
+const carouselImgButtons2 = document.querySelectorAll('.carousel-images__img--2')
+
+//event listener to change main image when clicking the .carouse-images__img--2
+carouselImgButtons2.forEach(imgButton => {
+  
+  imgButton.addEventListener('click', () => {
+
+    const carouselImgButtons2Div = document.querySelector('.carousel-images--2')
+    const activeImgButton2 = carouselImgButtons2Div.querySelector('[data-active-img-select]')
+
+    const slidesUl = document.querySelector('[data-slides-2]')
+    const slides = document.querySelectorAll('.slide--2')
+    const activeSlide = slidesUl.querySelector('[data-active]')
+
+    switch(imgButton.dataset.img){
+
+      case "1": 
+
+      delete activeSlide.dataset.active
+      slides[0].dataset.active = true
+
+      delete activeImgButton2.dataset.activeImgSelect
+      carouselImgButtons2[0].dataset.activeImgSelect = true
+
+      break;
+
+      case "2": 
+      
+      delete activeSlide.dataset.active
+      slides[1].dataset.active = true
+
+      delete activeImgButton2.dataset.activeImgSelect
+      carouselImgButtons2[1].dataset.activeImgSelect = true
+
+      break;
+
+      case "3": 
+
+      delete activeSlide.dataset.active
+      slides[2].dataset.active = true
+
+      delete activeImgButton2.dataset.activeImgSelect
+      carouselImgButtons2[2].dataset.activeImgSelect = true
+
+      break;
+
+      case "4": 
+      
+      delete activeSlide.dataset.active
+      slides[3].dataset.active = true
+
+      delete activeImgButton2.dataset.activeImgSelect
+      carouselImgButtons2[3].dataset.activeImgSelect = true
+
+      break;
+    }
+    
+  })
+
+});
+
+
 const slideImgs2 = document.querySelectorAll('.slide__img--2')
 
+//event listener to open carouselContainer when clicking the main image on desktop
 slideImgs2.forEach(slideImg2 => {
   slideImg2.addEventListener('click', () => {
 
     carouselContainer1.style.cssText = "display: flex"
   
-    blackBackgroundAtOpeningNav.dataset.blackBackgroundActive = "true"
+    blackBackground.dataset.blackBackgroundActive = "true"
 
   })
 });
@@ -245,7 +256,7 @@ const closeSlideImgs2Button = document.querySelector('.close-carousel-btn')
 
 closeSlideImgs2Button.addEventListener('click', () => {
 
-  blackBackgroundAtOpeningNav.dataset.blackBackgroundActive = "false"
+  blackBackground.dataset.blackBackgroundActive = "false"
   carouselContainer1.style.cssText = "display: none"
 
 })
@@ -262,6 +273,7 @@ const shoes = {
 
 
 
+//variables and event listener to + or - the number of products
 const buyBtnsAddOrLess = document.querySelectorAll('[data-buy-btns]')
 
 let numOfProducts = document.querySelector('.num-of-products')
@@ -287,7 +299,6 @@ buyBtnsAddOrLess.forEach(btn => {
 
 
 let trashBtns = document.querySelectorAll('.cart-item__trash-img')
-let trashBtnsArr = Array.from(trashBtns)
 
 let verifyThereIsCartItems = document.querySelectorAll('.cart-item')
 const addToCartBtn = document.querySelector('.buy-btns__add-cart')
@@ -300,6 +311,7 @@ if(verifyThereIsCartItems.length === 0){
 }
 
 
+//event listener to add a item to the cart
 addToCartBtn.addEventListener('click', () => {
   let verifyThereIsCartItems = document.querySelectorAll('.cart-item')
 
@@ -404,6 +416,7 @@ addToCartBtn.addEventListener('click', () => {
 })
 
 
+//Event listener to remove a item from the cart list
 trashBtns.forEach(trashButton => {
 
   trashButton.addEventListener('click', () => {
